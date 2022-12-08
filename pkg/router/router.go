@@ -13,13 +13,13 @@ type Post struct {
 
 var posts []Post = []Post{{Id: 1, Title: "Hello World", Text: "This is the first post"}}
 
-func GetPosts(resp http.ResponseWriter, req *http.Request) error {
+func GetPosts(resp http.ResponseWriter, req *http.Request) {
 	resp.Header().Set("Content-Type", "application/json")
 	result, err := json.Marshal(posts)
 	if err != nil {
 		resp.WriteHeader(http.StatusInternalServerError)
 		resp.Write([]byte(`{"error": "Error marshalling the posts array"}`))
-		return err
+		return
 	}
 	resp.WriteHeader(http.StatusOK)
 	resp.Write(result)

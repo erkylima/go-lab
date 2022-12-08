@@ -17,4 +17,5 @@ func ListenAndServe() error {
 	router.HandleFunc("/posts", GetPosts).Methods("GET")
 	http.ListenAndServe(port, router)
 	log.Println("Server started on port 8000")
+	return nil
 }
