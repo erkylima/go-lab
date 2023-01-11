@@ -1,0 +1,1 @@
+export GOOGLE_APPLICATION_CREDENTIALS="assets/golab-af2f4-firebase-adminsdk-87lbh-50001a2dee.json"
